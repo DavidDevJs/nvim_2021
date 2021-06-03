@@ -4,6 +4,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+"Brackets
+Plug 'jiangmiao/auto-pairs'
+"GIT
 Plug 'airblade/vim-gitgutter'
 " auto completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -18,6 +21,10 @@ call plug#end()
 let mapleader = ","
 
 colorscheme OceanicNext
+" transparent bg
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+" For Vim<8, replace EndOfBuffer by NonText
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 "Basic Settings
 syntax enable
@@ -117,7 +124,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 "}}}
 "
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-emmet', 'coc-prettier']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-emmet', 'coc-prettier', 'coc-eslint']
+
 " coc plugins
 " if hidden is not set, TextEdit might fail.
 set hidden
