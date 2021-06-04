@@ -10,8 +10,10 @@
     "typescript.tsx",
     "graphql"
   ],
+
   "eslint.autoFixOnSave": true,
-  "tsserver.enableJavascript": false,
+  "tsserver.enableJavascript": true,
+  "typescript.validate.enable": false,
   "languageserver": {
     "flow": {
       "command": "flow",
@@ -25,6 +27,7 @@
   },
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "",
+  "tsserver.log": "verbose",
   "diagnostic.infoSign": "",
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",

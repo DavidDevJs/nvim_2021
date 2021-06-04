@@ -1,8 +1,10 @@
 call plug#begin('~/.vim/plugged')
+"Tree Directory
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
+"Comments
 Plug 'scrooloose/nerdcommenter'
 "Brackets
 Plug 'jiangmiao/auto-pairs'
@@ -21,10 +23,9 @@ call plug#end()
 let mapleader = ","
 
 colorscheme OceanicNext
-" transparent bg
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-" For Vim<8, replace EndOfBuffer by NonText
 autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+
 
 "Basic Settings
 syntax enable
@@ -50,9 +51,12 @@ set lazyredraw " screen will not redraw while executing macros
 set formatoptions+=j " always uses spaces instead of tab characters
 set clipboard+=unnamedplus
 
+"Change Tab
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
 
 " mappings to move line
-
 nnoremap <silent> <C-i> :m .+1<CR>==
 nnoremap <silent> <C-o> :m .-2<CR>==
 inoremap <silent> <C-i> <Esc>:m .+1<CR>==gi
@@ -84,6 +88,26 @@ nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Up>    :resize +2<CR>
+
+"Mapping Snippets
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " NERDTree Mappings & Settings{{{
 nnoremap <c-space> :NERDTreeToggle<CR>
