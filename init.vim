@@ -17,6 +17,9 @@ Plug 'mhartington/oceanic-next'
 Plug 'arzg/vim-colors-xcode'
 "Syntaxy Css
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"Nodejs
+Plug 'myhere/vim-nodejs-complete'
+
 call plug#end()
 "}}}
 
@@ -50,6 +53,20 @@ set cursorline
 set lazyredraw " screen will not redraw while executing macros
 set formatoptions+=j " always uses spaces instead of tab characters
 set clipboard+=unnamedplus
+
+"Copy Paste 
+set clipboard=unnamedplus
+
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  yy  "+yy
+
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap pp "+P
+
 
 "Change Tab
 nnoremap <C-Left> :tabprevious<CR>
