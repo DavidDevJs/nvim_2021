@@ -19,7 +19,6 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Nodejs
 Plug 'myhere/vim-nodejs-complete'
-
 call plug#end()
 "}}}
 
@@ -60,7 +59,7 @@ set clipboard=unnamedplus
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
 nnoremap  <leader>y  "+y
-nnoremap  yy  "+yy
+nnoremap  <leader>yy  "+yy<CR>
 
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
@@ -69,8 +68,8 @@ vnoremap pp "+P
 
 
 "Change Tab
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <silent> <leader>h :tabprevious<CR>
+nnoremap <silent> <leader>l  :tabnext<CR>
 
 
 " mappings to move line
@@ -210,9 +209,9 @@ let g:ctrlp_working_path_mode = 'r'
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ <SID>check_back_space() ? "\<TAB>" :
-			\ coc#refresh()
+                        \ pumvisible() ? "\<C-n>" :
+                        \ <SID>check_back_space() ? "\<TAB>" :
+                        \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -305,3 +304,5 @@ augroup SetFileType
   autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 augroup END
 "}}}
+"
+
