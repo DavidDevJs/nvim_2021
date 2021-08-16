@@ -15,6 +15,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Themes
 Plug 'mhartington/oceanic-next'
 Plug 'arzg/vim-colors-xcode'
+Plug 'arcticicestudio/nord-vim'
 "Syntaxy Css
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Nodejs
@@ -150,7 +151,7 @@ augroup END
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "m",
     \ "Staged"    : "s",
     \ "Untracked" : "u",
