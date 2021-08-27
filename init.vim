@@ -16,6 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhartington/oceanic-next'
 Plug 'arzg/vim-colors-xcode'
 Plug 'arcticicestudio/nord-vim'
+Plug 'sainnhe/sonokai'
 "Syntaxy Css
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Nodejs
@@ -25,10 +26,16 @@ call plug#end()
 
 let mapleader = ","
 
-colorscheme OceanicNext
+colorscheme sonokai
+
+"Some themes [ 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso' ]
+let g:sonokai_style = 'atlantis'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+
+
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
-
 
 "Basic Settings
 syntax enable
@@ -127,7 +134,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " NERDTree Mappings & Settings{{{
-nnoremap <c-space> :NERDTreeToggle<CR>
+nnoremap <BS><BS> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^node_modules$']
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
