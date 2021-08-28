@@ -21,6 +21,9 @@ Plug 'sainnhe/sonokai'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Nodejs
 Plug 'myhere/vim-nodejs-complete'
+"Eslint 
+Plug 'w0rp/ale'
+
 call plug#end()
 "}}}
 
@@ -313,4 +316,14 @@ augroup SetFileType
 augroup END
 "}}}
 "
+
+""Eslint Config
+
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+
+let g:ale_fix_on_save = 1
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
 
