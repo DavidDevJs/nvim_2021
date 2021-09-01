@@ -1,3 +1,4 @@
+
 call plug#begin('~/.vim/plugged')
 "Tree Directory
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -21,8 +22,6 @@ Plug 'sainnhe/sonokai'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Nodejs
 Plug 'myhere/vim-nodejs-complete'
-"Eslint 
-Plug 'w0rp/ale'
 
 call plug#end()
 "}}}
@@ -79,8 +78,8 @@ vnoremap pp "+P
 
 
 "Change Tab
-nnoremap <silent> <leader>h :tabprevious<CR>
-nnoremap <silent> <leader>l  :tabnext<CR>
+nnoremap <silent> \\ :tabprevious<CR>
+nnoremap <silent> \\  :tabnext<CR>
 
 
 " mappings to move line
@@ -130,8 +129,6 @@ let g:coc_snippet_next = '<c-j>'
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
@@ -316,14 +313,5 @@ augroup SetFileType
 augroup END
 "}}}
 "
-
-""Eslint Config
-
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
-
-let g:ale_fix_on_save = 1
-
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
 
 
