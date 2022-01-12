@@ -134,7 +134,7 @@ let g:coc_snippet_prev = '<c-k>'
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " NERDTree Mappings & Settings{{{
-nnoremap <BS><BS> :NERDTreeToggle<CR>
+nnoremap <C-space> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^node_modules$']
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
